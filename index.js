@@ -3,11 +3,12 @@ const createManager = require('./src/objectCreateHandlers/createNewManager');
 const createNewEmployee = require('./src/objectCreateHandlers/createNewEmployee');
 const promptNewEmployeeRole = require('./src/objectCreateHandlers/promptNewEmployeeRole');
 const managerQuestions = require('./src/static/managerQuestions');
+const generateHtml = require('./src/htmlHelpers/generateHtml');
 
 const teamArray = [];
 
 async function initApp() {
-    console.log("WELCOME TO THE PROJECT TEAM MANAGER");
+    console.log("WELCOME TO THE PROJECT TEAM GENERATOR");
 
     const manager = await inquirer.prompt(managerQuestions)
     .then((answers) => createManager(answers));
@@ -19,7 +20,7 @@ async function initApp() {
         const roleId = await promptNewEmployeeRole();
 
         const employee = await createNewEmployee(roleId);
-        
+
         console.log(`New ${employee.getRole()} added!`);
         teamArray.push(employee);
         
@@ -40,6 +41,8 @@ async function initApp() {
     }
 
     console.log(teamArray);
+
+    generateHtml(teamArray);
 }
 
 initApp();

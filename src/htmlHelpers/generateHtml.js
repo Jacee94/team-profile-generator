@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+const generateCards = require('./generateCards');
+const fs = require('fs');
+
+function generateHtml(teamArray) {
+    const cardsArray = generateCards(teamArray);
+    const cardsHtml = cardsArray.join("");
+
+    const html = 
+`<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -17,19 +25,13 @@
             <h1>My Team</h1>
         </header>
         <main>
-            <!-- <div class="team-card">
-                <div class="team-card__header">
-                    <span class="team-card__header-name">Jace</span>
-                    <span class="team-card__header-role">
-                        <i class="fa-solid fa-laptop-code"></i> Engineer
-                    </span>
-                </div>
-                <div class="team-card__body">
-                    <span>asdf</span>
-                    <span>asdf</span>
-                    <span>asdf</span>
-                </div>
-            </div> -->
+            ${cardsHtml}
         </main>
     </body>
 </html>
+`;  
+
+    fs.writeFile("index.html", html, (error) => console.log(error));
+}
+
+module.exports = generateHtml;

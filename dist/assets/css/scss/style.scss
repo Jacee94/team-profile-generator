@@ -1,3 +1,78 @@
-html {
-    color: green;
+body {
+    background-color: rgb(161, 161, 161);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: rgb(31, 54, 104);
+    border-top: 2px solid rgb(66, 111, 209);
+    border-bottom: 2px solid rgb(66, 111, 209);
+}
+
+h1 {
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+    font-weight: 500;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.team-card {
+    width: 250px;
+}
+
+.team-card__header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgb(0, 81, 255);
+    color: white;
+    border: 2px solid rgb(34, 34, 34);
+    border-bottom: none;
+}
+
+.team-card__header-name {
+    font-family: 'Source Code Pro', monospace;    
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.team-card__header-role {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+
+    i {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+}
+
+.team-card__body {
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: rgb(212, 212, 212);
+    border: 2px solid rgb(34, 34, 34);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    span {
+        margin-top: 5px;
+        padding: 10px;
+        background-color: white;
+        border: 2px solid rgb(129, 129, 129);
+        border-radius: 5px;
+    }
 }
