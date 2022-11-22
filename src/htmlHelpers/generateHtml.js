@@ -31,7 +31,12 @@ function generateHtml(teamArray) {
 </html>
 `;  
 
-    fs.writeFile("index.html", html, (error) => console.log(error));
+    fs.writeFile("index.html", html, (error) => {
+        if(error){
+            return console.log(error);
+        }
+        console.log("File written successfully!")
+    });
 }
 
 module.exports = generateHtml;

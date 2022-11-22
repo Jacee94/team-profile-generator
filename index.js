@@ -15,6 +15,7 @@ async function initApp() {
 
     teamArray.push(manager);
 
+    console.log("Add your first Employee!");
     let keepAddingEmployees = true;
     while(keepAddingEmployees) {
         const roleId = await promptNewEmployeeRole();
@@ -39,8 +40,6 @@ async function initApp() {
             keepAddingEmployees = false;
         }
     }
-
-    console.log(teamArray);
 
     generateHtml(teamArray);
 }
