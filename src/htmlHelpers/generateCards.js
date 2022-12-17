@@ -24,7 +24,7 @@ function generateCards(teamArray) {
 
 function getOption(employee) {
     if(employee.getRole() === 'Manager') return `Office Number: ${employee.getOfficeNumber()}`;
-    if(employee.getRole() === 'Engineer') return `GitHub: <a href="${employee.getGithub()}">${employee.getGithub()}</a>`;
+    if(employee.getRole() === 'Engineer') return `GitHub: <a href="https://github.com/${employee.getGithub()}">${employee.getGithub()}</a>`;
     if(employee.getRole() === 'Intern') return `School: ${employee.getSchool()}`;
 }
 

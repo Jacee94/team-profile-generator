@@ -33,7 +33,7 @@ const employeeQuestions = [
             if (input) {
                 return true;
             } else {
-                console.log('Please enter a name for this Employee');
+                console.log('Please enter an Email Address for this Employee!');
                 return false;
             }
         }
